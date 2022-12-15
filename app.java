@@ -37,9 +37,9 @@ class Infrastructure {
   Db init() {
     db = new Db();
     Cinema c1 = new Cinema(1, "Челюсти", 1, 1);
-    Cinema c2 = new Cinema(2, "Жизнь на двоих", 1, 2);
+    Cinema c2 = new Cinema(2, "Жизнь на двоих", 2, 2);
     Cinema c3 = new Cinema(3, "Один дома", 3, 4);
-    Cinema c4 = new Cinema(4, "Бэтмен", 3, 3);
+    Cinema c4 = new Cinema(4, "Бэтмен", 4, 3);
 
     db.films.add(c1);
     db.films.add(c2);
@@ -49,6 +49,7 @@ class Infrastructure {
     db.genres.add(new Genre(1, "Ужасы"));
     db.genres.add(new Genre(2, "Драма"));
     db.genres.add(new Genre(3, "Комедия"));
+    db.genres.add(new Genre(4, "Фэнтези"));
     FilmProducerFactory pf = new FilmProducerFactory();
     db.addFilmProducer(pf.getFilmProducer("Paramount"));
     db.addFilmProducer(pf.getFilmProducer("Disney»"));
@@ -60,7 +61,7 @@ class Infrastructure {
 
   public void searchCinema(){
     boolean check = true;
-    Input scanner = new Input();
+    input scanner = new input();
     String text = "";
     while(check){
         text = scanner.inputString("Введте запрос по названию фильма или его части, для завершения поиска введите -1");
